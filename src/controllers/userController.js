@@ -8,7 +8,7 @@ import {
 export const getAllUsers = async (req, res) => {
   try {
     const users = await getAllUsersService();
-    res.json({ success: true, users });
+    res.json({ success: true, message: "Users fetched successfully", users });
   } catch (error) {
     console.error(error);
     res.status(500).json({ success: false, message: "Server error" });
