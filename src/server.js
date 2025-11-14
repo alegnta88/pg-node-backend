@@ -4,6 +4,7 @@ import dotenv from 'dotenv';
 import morgan from 'morgan'; 
 import helmet from 'helmet';
 import pool from './config/db.js';
+import userRoutes from './routes/userRoute.js';
 
 dotenv.config();
 
@@ -15,6 +16,7 @@ app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
 app.use(morgan('dev')); 
 
+app.use('/api/v1/users', userRoutes);
 const PORT = process.env.PORT || 3000;
 
 
